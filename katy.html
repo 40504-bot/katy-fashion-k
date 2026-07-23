@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katy Fashion K</title>
+    <style>
+        body { background-color: #080808; color: #D4AF37; font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
+        header { background: linear-gradient(135deg, #1a1a1a, #000000); width: 100%; padding: 30px 40px; border-bottom: 4px solid #D4AF37; text-align: center; box-sizing: border-box; }
+        h1 { font-size: 3.2em; margin: 0; text-transform: uppercase; letter-spacing: 5px; color: #FFDF00; }
+        .container { max-width: 750px; width: 90%; margin: 30px auto; padding: 35px; background-color: #141414; border: 2px solid #D4AF37; border-radius: 20px; text-align: center; }
+        h2 { color: #FFDF00; font-size: 1.8em; border-bottom: 2px dashed #D4AF37; padding-bottom: 12px; margin-bottom: 25px; }
+        .sobre-nos { font-size: 1.15em; line-height: 1.8; color: #E0E0E0; text-align: justify; }
+        .destaque-dourado { color: #FFDF00; font-weight: bold; }
+        .morada-box { background-color: #1f1f1f; border-left: 5px solid #D4AF37; padding: 15px; border-radius: 10px; margin-bottom: 20px; text-align: left; color: #FFFFFF; }
+        ul { list-style-type: none; padding: 0; font-size: 1.2em; }
+        li { margin: 15px 0; padding: 15px; background-color: #1f1f1f; border-radius: 10px; border-left: 5px solid #D4AF37; text-align: left; }
+        .dias { font-weight: bold; color: #FFFFFF; margin-right: 10px; display: inline-block; width: 140px; }
+        .aviso-ferias-box { margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #222, #111); border: 2px solid #D4AF37; border-radius: 12px; color: #FFDF00; font-weight: bold; font-size: 1.2em; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Katy Fashion K 😊</h1>
+    </header>
+
+    <div class="container">
+        <h2>Sobre Nós 😊</h2>
+        <p class="sobre-nos">
+            Bem-vindos à <span class="destaque-dourado">Katy Fashion K</span>! 😊 Somos uma página de vendas online no Facebook dedicada a levar até si as melhores peças de moda com todo o carinho, amor e máxima atenção em cada encomenda.
+            <br><br>
+            Para além da nossa presença online, temos o enorme prazer de a(o) receber na nossa <span class="destaque-dourado">loja física na Guimarota</span> (Rua Vale de Lobos), dispondo também do nosso <span class="destaque-dourado">armazém físico</span> na <strong>Rua Nossa Senhora da Agonia, porta 262 (Código Postal 2410-267)</strong>. Aqui, a sua satisfação e confiança vêm sempre em primeiro lugar! 😊
+        </p>
+    </div>
+
+    <div class="container">
+        <h2>Loja da Guimarota 😊</h2>
+        
+        <div class="morada-box">
+            📍 <strong>Morada da Loja:</strong> Rua Vale de Lobos, Guimarota
+        </div>
+
+        <h2>Horário de Funcionamento</h2>
+        <ul>
+            <li><span class="dias">Segunda-feira:</span> 14h às 19h</li>
+            <li><span class="dias">Terça a Sexta:</span> 10h às 13h | 14h às 19h</li>
+            <li><span class="dias">Sábado:</span> 10h às 13h</li>
+        </ul>
+
+        <div class="aviso-ferias-box" id="texto-ferias-publico">
+            ✨ Olá a todos! 😊 Informamos que iremos entrar de férias em breve. As datas exatas serão publicadas brevemente! Fiquem atentos! ✨
+        </div>
+    </div>
+
+    <script>
+        // Lê automaticamente o texto que tu editaste na página secreta!
+        window.onload = function() {
+            const textoGuardado = localStorage.getItem('katy_ferias_publicas');
+            if (textoGuardado) {
+                document.getElementById('texto-ferias-publico').innerText = textoGuardado;
+            }
+        };
+    </script>
+</body>
+</html>
