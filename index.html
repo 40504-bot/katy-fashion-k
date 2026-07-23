@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel Secreto - Katy Fashion K</title>
+    <style>
+        body { background-color: #080808; color: #D4AF37; font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        .box { background: #141414; border: 2px solid #D4AF37; padding: 30px; border-radius: 15px; max-width: 500px; margin: auto; }
+        input, textarea { width: 90%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #D4AF37; background: #222; color: #fff; }
+        button { background: linear-gradient(135deg, #D4AF37, #B8860B); border: none; padding: 12px 20px; font-weight: bold; cursor: pointer; border-radius: 5px; }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h2>Área Privada da Katy 😊</h2>
+        
+        <div id="area-login">
+            <p>Digita a tua palavra-passe secreta:</p>
+            <input type="password" id="passe" placeholder="Palavra-passe">
+            <br>
+            <button onclick="entrar()">Entrar</button>
+        </div>
+
+        <div id="area-edicao" style="display: none;">
+            <p>Escreve aqui o novo aviso de férias:</p>
+            <textarea id="novo-texto" rows="4">✨ Olá a todos! 😊 Informamos que iremos entrar de férias em breve. As datas exatas serão publicadas brevemente! Fiquem atentos! ✨</textarea>
+            <br>
+            <button onclick="guardarFerias()">💾 Publicar no Site</button>
+        </div>
+    </div>
+
+    <script>
+        // Define aqui a tua palavra-passe secreta (podes mudar a palavra 'katy123')
+        const PASSE_CORRETA = "katy123";
+
+        function entrar() {
+            const digitada = document.getElementById('passe').value;
+            if (digitada === PASSE_CORRETA) {
+                document.getElementById('area-login').style.display = 'none';
+                document.getElementById('area-edicao').style.display = 'block';
+                
+                // Carrega texto atual
+                const guardado = localStorage.getItem('katy_ferias_publicas');
+                if (guardado) document.getElementById('novo-texto').value = guardado;
+            } else {
+                alert("Palavra-passe errada! 😊");
+            }
+        }
+
+        function guardarFerias() {
+            const texto = document.getElementById('novo-texto').value;
+            localStorage.setItem('katy_ferias_publicas', texto);
+            alert("Publicado com sucesso! A página pública já está atualizada. 😊");
+        }
+    </script>
+</body>
+</html>
